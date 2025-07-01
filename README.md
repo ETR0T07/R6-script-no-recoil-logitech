@@ -1,3 +1,4 @@
+Copy fully Script
 # R6-script-no-recoil-logitech
 You need change some setting 
 like your mouse DPI you have change it to 800
