@@ -1,2 +1,187 @@
 # R6-script-no-recoil-logitech
-R6 script no recoil logitech
+local xQz = "junk" .. tostring(math.random(100,999))
+local _f1 = { "foo", "bar", "baz", "qux" }
+local _f2 = 123456 * 789
+local _f3 = "Sabotage" .. tostring(_f2)
+local _f4 = {1,2,3,4,5}
+local _f5 = "JUNK" .. tostring(_f4[math.random(1,5)])
+local _f6 = "NotAKey" .. tostring(_f2)
+local _f7 = 42 * 1337
+local _f8 = "FAKE" .. tostring(_f7)
+local _f9 = {70, 65, 75, 69, 79, 87, 78, 69, 82}
+local _f10 = {69, 84, 82, 48, 84, 48, 55, 32, 69, 84, 82, 79, 84, 48, 55}
+
+function _decoySabotageA()
+    if _f2 == 0 then
+        EnableRCS = false
+        RcCustomStrength = 0
+        DelayRate = 999
+    end
+end
+
+function _decoySabotageB()
+    if _f7 == 1 then
+        EnableRCS = false
+        RcCustomStrength = 0
+        DelayRate = 999
+    end
+end
+
+function _fakeCheckA() return math.random() > 0 end
+function _fakeCheckB(a) return tostring(a) == "secure" end
+function _fakeCheckC() for i=1,10 do end; return true end
+function _fakeCheckD() return #("junk"..math.random(1,100)) > 0 end
+function _fakeCheckE() return not not "protection" end
+function _fakeCheckF() return string.reverse("owner") == "renwo" end
+function _fakeCheckG() return 42 == 42 end
+function _fakeCheckH() return string.find("SAFEGUARD", "GUARD") ~= nil end
+function _fakeCheckI() return (1+1)==2 end
+function _fakeCheckJ() return type(_fakeCheckA) == "function" end
+
+local function _decodeTag(tbl)
+    local t = {}
+    for i = 1, #tbl do t[#t + 1] = string.char(tbl[i]) end
+    return table.concat(t)
+end
+local __OwnerTag = _decodeTag(_f10)  -- "ETR0T07 ETROT07"
+local __FakeOwner = _decodeTag(_f9)  -- "TBEH"
+local __ClientID = "Client#42-Jose"
+
+EnableRCS = true
+RcCustomStrength = 7.5
+RequireToggle = true
+ToggleKey = "CapsLock"
+DelayRate = 7
+local _junkSwitch = _f1[math.random(1,4)]
+
+-- Operator lists (shuffled variable names)
+local a1 = {
+    "ASH", "TWITCH", "RAM", "BLACKBEARD", "DOKKAEBI", "DOKKAEBI2", "AMARU", "AMARU2",
+    "IQ", "FINKA", "FUZE", "ACE", "JACKAL", "JACKAL2", "YING", "ZOFIA", "ZOFIA2", "LION",
+    "NOMAD", "NOMAD2", "GRIDLOCK", "HIBANA", "SLEDGE", "BUCK", "CAPITAO", "THATCHER",
+    "ZERO", "GLAZ", "GLAZ2", "BRAVA", "GRIM", "MAV", "STRIKER", "THERMITE", "NOOK"
+}
+local b2 = {
+    "ALIBI", "BANDIT", "DOC", "ROOK", "VALK", "WARDEN", "WARDEN2", "VIGIL2", "MUTE2",
+    "AZAMI1", "AZAMI2", "KAPKAN", "LESION", "ORYX", "CASTLE", "PULSE", "ELA", "MOZZIE",
+    "MAESTRO", "MAESTRO2", "GOYO", "MIRA"
+}
+
+function _getStrength(z)
+    local t = {
+        ALIBI = 10.4, BLACKBEARD = 3.98, ASH = 20.73, RAM = 20.73, TWITCH = 24.4, DOC = 16.14,
+        ROOK = 16.14, VALK = 8.19, WARDEN = 8.19, WARDEN2 = 15.78, DOKKAEBI2 = 15.78,
+        DOKKAEBI = 6.7, VIGIL2 = 15.78, AMARU2 = 15.23, AMARU = 15.78, MUTE2 = 15.23,
+        AZAMI1 = 11, AZAMI2 = 8.73, KAPKAN = 8.73, LESION = 9.62, ORYX = 9.62,
+        CASTLE = 9.58, PULSE = 5, BANDIT = 7.9, ELA = 8.5, MOZZIE = 9.2,
+        MAV = 16.5, STRIKER = 16.5, GRIM = 13.85, IQ = 13.85, MAESTRO = 10.24,
+        MAESTRO2 = 11, FINKA = 16.78, NOOK = 14.67, GOYO = 21.85, MIRA = 11.85,
+        ZERO = 14.92, BRAVA = 12.8, CAPITAO = 12.8, BUCK = 14.8, THERMITE = 11.47,
+        THATCHER = 13.187, SLEDGE = 13.187, GLAZ = 5.92, GLAZ2 = 12.7, FUZE = 18,
+        ACE = 18, HIBANA = 14.6, JACKAL = 19, JACKAL2 = 14.84, YING = 14.34,
+        ZOFIA = 17.1, ZOFIA2 = 18.9, LION = 10.74, NOMAD = 14, NOMAD2 = 35,
+        GRIDLOCK = 12.67
+    }
+    return t[z] or 0
+end
+
+-- More junk
+local _junkX = _getStrength("ASH") + _getStrength("MIRA") + 123
+local _junkY = tostring(_junkX) .. _f3
+
+local function _integrity()
+    _fakeCheckA(); _fakeCheckB("test"); _fakeCheckC(); _fakeCheckD()
+    _fakeCheckE(); _fakeCheckF(); _fakeCheckG(); _fakeCheckH()
+    _fakeCheckI(); _fakeCheckJ()
+    _decoySabotageA(); _decoySabotageB()
+    if type(__OwnerTag) ~= "string" then return false end
+    if not string.find(__OwnerTag, "ETR0T07") then return false end
+    if not string.find(__OwnerTag, "ETROT07") then return false end
+    local banned = {"BY", "MADEBY", "CREDIT", "REPACK", "HACKED", "RIPPER", "STOLEN"}
+    for _, b in ipairs(banned) do
+        if string.find(__OwnerTag:upper(), b) then return false end
+    end
+    return true
+end
+
+local _secure = _integrity()
+if not _secure then
+    EnableRCS = false
+    RcCustomStrength = 0.2
+    DelayRate = 130
+end
+
+-- Operator selection logic (scrambled)
+local _cat = "ATTACKER"
+local _idx = 2
+local _mode = a1[_idx]
+local _str = 0
+
+function _setOp(n)
+    _mode = n
+    _str = _getStrength(n)
+end
+
+function _printCat(n, l, a)
+    OutputLogMessage("\n========= [%s] =========\n", string.upper(n))
+    for i, op in ipairs(l) do
+        local m = (i == a) and "✅" or "  "
+        OutputLogMessage("%s %-10s", m, op)
+        if i % 6 == 0 then OutputLogMessage("\n") end
+    end
+    OutputLogMessage("\n===========================\n")
+end
+
+function _printChart()
+    OutputLogMessage("\n======== CURRENT LOADOUT ========\n")
+    if _cat == "ATTACKER" then
+        _printCat("ATTACKERS", a1, _idx)
+    else
+        _printCat("DEFENDERS", b2, _idx)
+    end
+end
+
+EnablePrimaryMouseButtonEvents(true)
+local _acc = 0
+_setOp(_mode)
+
+function OnEvent(e, a)
+    if e == "MOUSE_BUTTON_PRESSED" then
+        if a == 4 then
+            if _cat == "ATTACKER" then
+                _cat = "DEFENDER"
+                _idx = 1
+                _setOp(b2[_idx])
+            else
+                _cat = "ATTACKER"
+                _idx = 1
+                _setOp(a1[_idx])
+            end
+            _printChart()
+        elseif a == 5 then
+            _idx = _idx + 1
+            local l = _cat == "ATTACKER" and a1 or b2
+            if _idx > #l then _idx = 1 end
+            _setOp(l[_idx])
+            _printChart()
+        end
+    end
+
+    if EnableRCS and (not RequireToggle or IsKeyLockOn(ToggleKey)) then
+        if IsMouseButtonPressed(3) then
+            repeat
+                if IsMouseButtonPressed(1) then
+                    repeat
+                        _acc = _acc + _str
+                        local m = math.floor(_acc)
+                        _acc = _acc - m
+                        if m ~= 0 then
+                            MoveMouseRelative(0, m)
+                        end
+                        Sleep(DelayRate)
+                    until not IsMouseButtonPressed(1)
+                end
+            until not IsMouseButtonPressed(3)
+        end
+    end
+end
