@@ -13,4 +13,3 @@ also you have on the
 Compensator and vertical Grip
 # Copy fully R6 Script #
 Copy fully Script
-https://github.com/ETR0T07/R6-script-no-recoil-logitech/edit/main/message%20(1).txt
